@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run-Client" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="openminer.client.run.Main" />
+    <module name="client" />
+    <option name="PROGRAM_PARAMETERS" value="--name GeneralPashon --title &quot;OpenMiner (IDEA)&quot;" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/launcher/openminer" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="openminer.client.options.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
