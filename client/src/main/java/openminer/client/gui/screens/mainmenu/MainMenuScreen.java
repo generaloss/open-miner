@@ -2,8 +2,8 @@ package openminer.client.gui.screens.mainmenu;
 
 import jpize.Jpize;
 import jpize.graphics.texture.Texture;
+import jpize.ui.context.PuiLoader;
 import jpize.ui.context.UIContext;
-import jpize.ui.context.UILoader;
 import jpize.ui.palette.Button;
 import openminer.client.gui.screens.AbstractScreen;
 import openminer.client.gui.screens.ScreenManager;
@@ -19,7 +19,7 @@ public class MainMenuScreen extends AbstractScreen{
         super(screenManager);
         this.panorama = new Panorama();
 
-        this.ui = new UILoader()
+        this.ui = new PuiLoader()
             .putRes("font", font)
             .putRes("background", background)
             .loadRes("ui/main_menu.pui");

@@ -1,7 +1,7 @@
 package openminer.client.gui.screens.options;
 
+import jpize.ui.context.PuiLoader;
 import jpize.ui.context.UIContext;
-import jpize.ui.context.UILoader;
 import jpize.ui.palette.Button;
 import openminer.client.gui.screens.AbstractScreen;
 import openminer.client.gui.screens.ScreenManager;
@@ -12,7 +12,7 @@ public class OptionsScreen extends AbstractScreen{
 
     public OptionsScreen(ScreenManager screenManager){
         super(screenManager);
-        this.ui = new UILoader()
+        this.ui = new PuiLoader()
             .putRes("font", super.font)
             .loadRes("ui/options.pui");
 

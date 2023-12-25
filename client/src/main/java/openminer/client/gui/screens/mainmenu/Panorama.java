@@ -20,12 +20,14 @@ public class Panorama{
 
     public void render(){
         panorama.render(camera);
+
         camera.getRotation().yaw += Jpize.getDt() * 10;
         camera.update();
     }
 
     public void reset(){
         camera.getRotation().set(90, -25);
+        camera.update();
     }
 
 }

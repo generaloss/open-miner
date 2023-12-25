@@ -6,39 +6,21 @@
     @Button (8ap, 70px, 'Singleplayer', !font) {
         ID: 'singleplayer'
         padding: (0.35rh, zero, auto, zero)
-        style: {
-            border_size: 2px
-            border_color: (1, 1, 1, 1)
-            background: {
-                color: (0.5, 0.5, 0.5, 0.5)
-            }
-        }
+        style: { border_size: 2px border_color: (1, 1, 1, 1) background: { color: (0.5, 0.5, 0.5, 0.5) } }
         textview.color: (1, 1, 1, 1)
     }
 
     @Button (8ap, 70px, 'Options', !font) {
         ID: 'options'
         padding: (20px, zero, auto, zero)
-        style: {
-            border_size: 2px
-            border_color: (1, 1, 1, 1)
-            background: {
-                color: (0.5, 0.5, 0.5, 0.5)
-            }
-        }
+        style: { border_size: 2px border_color: (1, 1, 1, 1) background: { color: (0.5, 0.5, 0.5, 0.5) } }
         textview.color: (1, 1, 1, 1)
     }
 
     @Button (8ap, 70px, 'Quit', !font) {
         ID: 'quit'
         padding: (20px, zero, auto, zero)
-        style: {
-            border_size: 2px
-            border_color: (1, 1, 1, 1)
-            background: {
-                color: (0.5, 0.5, 0.5, 0.5)
-            }
-        }
+        style: { border_size: 2px border_color: (1, 1, 1, 1) background: { color: (0.5, 0.5, 0.5, 0.5) } }
         textview.color: (1, 1, 1, 1)
     }
 
