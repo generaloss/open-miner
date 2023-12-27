@@ -24,6 +24,8 @@ public class MainMenuScreen extends AbstractScreen{
             .putRes("background", background)
             .loadRes("ui/main_menu.pui");
 
+        ui.setBorderSoftness(0);
+
         // Singleplayer
         final Button singleplayer_button = ui.getByID("singleplayer");
         singleplayer_button.input().addPressCallback((comp, btn) -> comp.style().background().color().setA(0.75));
