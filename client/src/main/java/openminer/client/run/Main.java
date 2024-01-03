@@ -3,7 +3,7 @@ package openminer.client.run;
 import jpize.Jpize;
 import jpize.io.context.ContextBuilder;
 import jpize.math.Maths;
-import openminer.SharedConstants;
+import openminer.core.SharedConstants;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -33,7 +33,7 @@ public class Main{
 
         ContextBuilder.newContext(title, width, height)
             .icon("icon.png")
-            .register().setAdapter(new OpenMiner(args_map));
+            .register().setAdapter(new Openminer(args_map));
 
         // Run
         Jpize.runContexts();

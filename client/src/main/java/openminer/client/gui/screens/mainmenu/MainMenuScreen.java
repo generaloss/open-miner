@@ -30,6 +30,7 @@ public class MainMenuScreen extends AbstractScreen{
         final Button singleplayer_button = ui.getByID("singleplayer");
         singleplayer_button.input().addPressCallback((comp, btn) -> comp.style().background().color().setA(0.75));
         singleplayer_button.input().addReleaseCallback((comp, btn) -> comp.style().background().color().setA(0.5));
+        singleplayer_button.input().addReleaseCallback((comp, btn) -> super.setScreen("game"));
 
         // Options
         final Button options_button = ui.getByID("options");
@@ -59,6 +60,12 @@ public class MainMenuScreen extends AbstractScreen{
     @Override
     public void hide(){
         ui.disable();
+    }
+
+    @Override
+    public void dispose(){
+        panorama.dispose();
+        background.dispose();
     }
 
 }

@@ -1,4 +1,4 @@
-package openminer;
+package openminer.core;
 
 public class SharedConstants{
 
