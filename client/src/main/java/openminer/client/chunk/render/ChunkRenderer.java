@@ -1,5 +1,7 @@
 package openminer.client.chunk.render;
 
+import jpize.gl.Gl;
+import jpize.gl.glenum.GlTarget;
 import jpize.graphics.texture.Texture;
 import jpize.graphics.util.Shader;
 import jpize.util.file.Resource;
@@ -46,7 +48,7 @@ public class ChunkRenderer implements Renderer{
 
     @Override
     public void render(Camera camera){
-        // Gl.enable(GlTarget.DEPTH_TEST);
+        Gl.enable(GlTarget.DEPTH_TEST);
 
         chunkShader.bind();
         chunkShader.uniform("u_projection", camera.getProjection());
@@ -64,7 +66,7 @@ public class ChunkRenderer implements Renderer{
             mesh.render();
         }
 
-        // Gl.disable(GlTarget.DEPTH_TEST);
+        Gl.disable(GlTarget.DEPTH_TEST);
     }
 
     @Override

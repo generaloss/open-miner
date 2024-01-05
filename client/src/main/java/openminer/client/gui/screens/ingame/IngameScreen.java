@@ -2,6 +2,7 @@ package openminer.client.gui.screens.ingame;
 
 import jpize.Jpize;
 import jpize.graphics.camera.controller.Motion3DController;
+import jpize.math.Maths;
 import jpize.sdl.input.Key;
 import openminer.chunk.Chunk;
 import openminer.chunk.section.storage.ByteSectionData;
@@ -68,14 +69,16 @@ public class IngameScreen extends AbstractScreen{
         ByteSectionData blocks = chunk.getSections().getByIndex(1).getBlocks();
         for(int x = 0; x < Chunks.SIZE; x++){
             for(int z = 0; z < Chunks.SIZE; z++){
-                blocks.set(x, 5, z, (byte) 1);
+                if(Maths.randomBoolean())
+                    blocks.set(x, 5, z, (byte) 1);
             }
         }
         levelRenderer.getChunkRenderer().getTessellator().tesselate(chunk);
     }
 
     public void update(){
-        controller.update(-camera.getRotation().yaw);
+        controller.update(camera.getRotation().yaw);
+        camera.getPosition().add(controller.getDirectedMotion().mul(0.1));
 
         if(Key.ESCAPE.isDown())
             screenManager.setScreen("main_menu");
