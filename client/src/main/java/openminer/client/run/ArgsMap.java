@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/** Args format: "--key1 value --key2 "multi word value" ..." */
+/** Args format: --key1 value --key2 "multi word value" ... */
 public class ArgsMap{
 
     public static final Logger LOG = LogManager.getRootLogger();

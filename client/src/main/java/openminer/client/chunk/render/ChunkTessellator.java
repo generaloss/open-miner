@@ -1,6 +1,7 @@
 package openminer.client.chunk.render;
 
 import jpize.util.array.list.FloatList;
+import jpize.util.time.Stopwatch;
 import openminer.chunk.Chunk;
 import openminer.chunk.section.ChunkSection;
 import openminer.chunk.section.storage.ByteSectionData;
@@ -25,14 +26,16 @@ public class ChunkTessellator{
 
 
     public void tesselate(Chunk chunk){
+        Stopwatch sw = new Stopwatch().start();
         for(ChunkSection section: chunk.getSections().array())
             tesselate(section);
+        System.out.println(sw.getSeconds());
     }
 
     public void tesselate(ChunkSection section){
         if(section.getBlocks().isEmpty())
             return;
-        
+
         final ByteSectionData blocks = section.getBlocks();
         final BlockMeshManager blockMeshes = renderer.getBlockMeshes();
         final SectionPos position = section.getPosition();
