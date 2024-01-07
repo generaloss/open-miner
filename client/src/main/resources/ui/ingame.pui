@@ -1,0 +1,9 @@
+@ConstraintLayout {
+
+    # FPS
+    @TextView ("fps: 0", !font) {
+        ID: "fps"
+        padding: (5px, 5px)
+    }
+
+}

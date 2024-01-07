@@ -1,17 +1,19 @@
 package openminer.client.chunk.render;
 
-import jpize.graphics.mesh.QuadMesh;
+import jpize.gl.tesselation.GlPrimitive;
+import jpize.graphics.mesh.Mesh;
 import jpize.math.vecmath.matrix.Matrix4f;
 import openminer.client.core.Meshes;
 import openminer.core.pos.SectionPos;
 
-public class SectionMesh extends QuadMesh{
+public class SectionMesh extends Mesh{
 
     private final SectionPos position;
     private final Matrix4f translateMatrix;
 
-    public SectionMesh(SectionPos position, int quads){
-        super(quads, Meshes.POSITION, Meshes.TINT, Meshes.UV);
+    public SectionMesh(SectionPos position){
+        super(Meshes.POSITION, Meshes.TINT, Meshes.UV);
+        super.setMode(GlPrimitive.QUADS);
         this.position = position;
         this.translateMatrix = position.calcTranslateMatrix();
     }

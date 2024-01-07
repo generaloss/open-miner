@@ -2,6 +2,7 @@ package openminer.client.run;
 
 import jpize.gl.Gl;
 import jpize.io.context.JpizeApplication;
+import jpize.sdl.Sdl;
 import jpize.util.time.Sync;
 import openminer.client.camera.Camera;
 import openminer.client.entity.player.LocalPlayer;
@@ -22,7 +23,8 @@ public class Openminer extends JpizeApplication{
     public Openminer(ArgsMap args) throws Exception{
         this.options = new Options("options.cfg");
         this.fpsLimiter = new Sync(options.display.fps_limit);
-        this.fpsLimiter.enable(!options.display.vsync);
+        this.fpsLimiter.enable(!options.display.vsync && options.display.fps_limit != -1);
+        Sdl.enableVsync(options.display.vsync);
         this.player = new LocalPlayer(this, new PlayerInput(){ });
         this.camera = new Camera(this);
         this.levelRenderer = new LevelRenderer(this);

@@ -2,7 +2,7 @@
   <configuration default="false" name="Run-Client" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="openminer.client.run.Main" />
     <module name="client" />
-    <option name="PROGRAM_PARAMETERS" value="--title &quot;OpenMiner (IDEA)&quot; --width 1920 --height 1080" />
+    <option name="PROGRAM_PARAMETERS" value="--title &quot;Openminer (IDEA)&quot; --width 1920 --height 1080" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/launcher/openminer" />
     <extension name="coverage">
       <pattern>
