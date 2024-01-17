@@ -11,21 +11,21 @@ $button_style = {
     style.background.image: !background
     style.background.color.a: 0.4
 
-    @Button (8ap, 70px, 'Singleplayer', !font) {
+    @Button (8ap, 70px, 'Singleplayer', !font, 0.8rh) {
         ID: 'singleplayer'
         padding: (0.35rh, zero, auto, zero)
         style: $button_style
         textview.color: (1, 1, 1, 1)
     }
 
-    @Button (8ap, 70px, 'Options', !font) {
+    @Button (8ap, 70px, 'Options', !font, 0.8rh) {
         ID: 'options'
         padding: (20px, zero, auto, zero)
         style: $button_style
         textview.color: (1, 1, 1, 1)
     }
 
-    @Button (8ap, 70px, 'Quit', !font) {
+    @Button (8ap, 70px, 'Quit', !font, 0.8rh) {
         ID: 'quit'
         padding: (20px, zero, auto, zero)
         style: $button_style
