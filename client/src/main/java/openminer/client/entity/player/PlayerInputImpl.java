@@ -1,7 +1,7 @@
 package openminer.client.entity.player;
 
 import jpize.Jpize;
-import jpize.graphics.camera.ctrl.EulerRotCtrl;
+import jpize.io.EulerRotCtrl;
 import jpize.sdl.event.callback.keyboard.KeyCallback;
 import jpize.util.math.util.EulerAngles;
 import openminer.client.options.Options;
