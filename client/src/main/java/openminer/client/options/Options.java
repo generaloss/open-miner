@@ -1,6 +1,7 @@
 package openminer.client.options;
 
 import jpize.Jpize;
+import jpize.sdl.Sdl;
 import jpize.sdl.input.Key;
 import jpize.util.file.Resource;
 import jpize.util.file.ResourceExt;
@@ -15,6 +16,7 @@ public class Options{
         this.resource.create();
         this.writer = new OptionsWriter(this);
         load();
+        Sdl.enableVsync(display.vsync);
     }
 
     private void load() throws Exception{
@@ -67,7 +69,7 @@ public class Options{
     public static class Keyboard{
         public Key forward            = Key.W;
         public Key left               = Key.A;
-        public Key back               = Key.S;
+        public Key backward = Key.S;
         public Key right              = Key.D;
 
         public Key jump               = Key.SPACE;

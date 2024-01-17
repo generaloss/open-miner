@@ -1,8 +1,8 @@
 package openminer.client.run;
 
 import jpize.Jpize;
-import jpize.io.context.ContextBuilder;
-import jpize.math.Maths;
+import jpize.app.context.ContextBuilder;
+import jpize.util.math.Maths;
 import openminer.core.SharedConstants;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -33,6 +33,8 @@ public class Main{
 
         ContextBuilder.newContext(title, width, height)
             .icon("icon.png")
+            .ssaaSamples(16)
+            .depthBufferSize(64)
             .register().setAdapter(new Openminer(args_map));
 
         // Run

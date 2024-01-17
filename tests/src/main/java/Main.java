@@ -1,5 +1,5 @@
 import jpize.Jpize;
-import jpize.io.context.ContextBuilder;
+import jpize.app.context.ContextBuilder;
 import tests.lighttest.LightPropagate;
 
 public class Main{

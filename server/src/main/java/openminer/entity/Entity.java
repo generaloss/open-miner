@@ -1,3 +1,13 @@
 package openminer.entity;
 
-public class Entity{ }
+import jpize.util.math.vecmath.vector.Vec3f;
+
+public class Entity{
+
+    public final Vec3f position;
+
+    public Entity(){
+        this.position = new Vec3f();
+    }
+
+}

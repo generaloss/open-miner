@@ -1,13 +1,12 @@
 package openminer.client.gui.screens.ingame;
 
 import jpize.Jpize;
-import jpize.graphics.camera.controller.Motion3DController;
-import jpize.math.Maths;
 import jpize.sdl.Sdl;
 import jpize.sdl.input.Key;
 import jpize.ui.context.PuiLoader;
 import jpize.ui.context.UIContext;
 import jpize.ui.palette.TextView;
+import jpize.util.math.Maths;
 import openminer.chunk.Chunk;
 import openminer.chunk.section.ChunkSection;
 import openminer.chunk.section.storage.ByteSectionData;
@@ -25,7 +24,6 @@ public class IngameScreen extends AbstractScreen{
 
     private final Camera camera;
     private final LevelRenderer levelRenderer;
-    private final Motion3DController controller;
 
     public IngameScreen(ScreenManager screenManager){
         super(screenManager);
@@ -39,8 +37,6 @@ public class IngameScreen extends AbstractScreen{
         final Openminer openminer = screenManager.getOpenminer();
         this.camera = openminer.getCamera();
         this.levelRenderer = openminer.getLevelRenderer();
-
-        this.controller = new Motion3DController();
 
         camera.getPosition().set(8, 25, 8);
         AdaptBlockMesh blockMesh = new AdaptBlockMesh(
@@ -78,7 +74,7 @@ public class IngameScreen extends AbstractScreen{
         );
         levelRenderer.getChunkRenderer().getBlockMeshes().putMesh((byte) 1, blockMesh);
 
-        chunk = new Chunk(0, 0);
+        Chunk chunk = new Chunk(0, 0);
         for(ChunkSection section: chunk.getSections().array()){
             ByteSectionData blocks = section.getBlocks();
 
@@ -89,18 +85,13 @@ public class IngameScreen extends AbstractScreen{
                             blocks.set(x, y, z, (byte) 1);
         }
 
+        levelRenderer.getChunkRenderer().getTessellator().tesselate(chunk);
+
     }
-    Chunk chunk;
 
     public void update(){
-        if(Key.T.isDown())
-            levelRenderer.getChunkRenderer().getTessellator().tesselate(chunk);
-
         if(Key.V.isDown())
             Sdl.enableVsync(!Sdl.isVsyncEnabled());
-
-        controller.update(camera.getRotation().yaw);
-        camera.getPosition().add(controller.getDirectedMotion().mul(0.1));
 
         if(Key.ESCAPE.isDown())
             screenManager.setScreen("main_menu");
@@ -117,13 +108,13 @@ public class IngameScreen extends AbstractScreen{
 
     @Override
     public void show(){
-        camera.unlockRotation();
+        screenManager.getOpenminer().getPlayerInput().enable();
         ui.enable();
     }
 
     @Override
     public void hide(){
-        camera.lockRotation();
+        screenManager.getOpenminer().getPlayerInput().disable();
         Jpize.input().toCenter();
         ui.disable();
     }

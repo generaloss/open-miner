@@ -2,7 +2,7 @@ package openminer.client.chunk.render;
 
 import jpize.gl.tesselation.GlPrimitive;
 import jpize.graphics.mesh.Mesh;
-import jpize.math.vecmath.matrix.Matrix4f;
+import jpize.util.math.vecmath.matrix.Matrix4f;
 import openminer.client.core.Meshes;
 import openminer.core.pos.SectionPos;
 

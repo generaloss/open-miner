@@ -75,6 +75,11 @@
             <artifactId>ui</artifactId>
             <version>23.12.1</version>
         </dependency>
+        <dependency>
+            <groupId>jpize-engine</groupId>
+            <artifactId>util</artifactId>
+            <version>23.12.1</version>
+        </dependency>
         <!-- LWJGL -->
         <dependency><groupId>org.lwjgl</groupId><artifactId>lwjgl</artifactId></dependency>
         <dependency><groupId>org.lwjgl</groupId><artifactId>lwjgl-assimp</artifactId></dependency>

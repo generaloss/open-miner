@@ -1,7 +1,7 @@
 package openminer.client.gui.screens;
 
 import jpize.Jpize;
-import jpize.util.Disposable;
+import jpize.app.Disposable;
 import openminer.client.gui.screens.ingame.IngameScreen;
 import openminer.client.run.Openminer;
 import openminer.client.gui.screens.mainmenu.MainMenuScreen;

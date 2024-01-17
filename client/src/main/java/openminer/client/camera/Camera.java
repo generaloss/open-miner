@@ -1,20 +1,30 @@
 package openminer.client.camera;
 
 import jpize.graphics.camera.PerspectiveCamera;
-import jpize.graphics.camera.controller.Rotation3DController;
 import openminer.client.run.Openminer;
 import openminer.core.Chunks;
 import openminer.core.pos.SectionPos;
+import openminer.entity.Entity;
+import openminer.entity.LivingEntity;
 
 public class Camera extends PerspectiveCamera{
 
-    private final Rotation3DController controller;
+    private final LivingEntity entity;
 
-    public Camera(Openminer openminer){
-        super(0.1, 1000, openminer.getOptions().graphics.fov);
+    public Camera(Openminer openminer, LivingEntity entity){
+        super(0.1, 10000, openminer.getOptions().graphics.fov);
+        this.entity = entity;
+    }
 
-        this.controller = new Rotation3DController(false);
-        this.controller.setSpeed(openminer.getOptions().mouse.sensitivity);
+    public Entity getEntity(){
+        return entity;
+    }
+
+    @Override
+    public void update(){
+        position.set(entity.position);
+        rotation.set(entity.yaw, entity.pitch);
+        super.update();
     }
 
     public boolean isNotVisible(SectionPos position){
@@ -25,21 +35,6 @@ public class Camera extends PerspectiveCamera{
             x, y, z,
             x + Chunks.SIZE, y + Chunks.SIZE, z + Chunks.SIZE
         );
-    }
-
-    @Override
-    public void update(){
-        controller.update();
-        rotation.set(controller.getRotation());
-        super.update();
-    }
-
-    public void unlockRotation(){
-        controller.setEnabled(true);
-    }
-
-    public void lockRotation(){
-        controller.setEnabled(false);
     }
 
 }

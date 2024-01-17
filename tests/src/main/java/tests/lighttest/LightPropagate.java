@@ -1,11 +1,11 @@
 package tests.lighttest;
 
 import jpize.Jpize;
-import jpize.math.Maths;
-import jpize.math.vecmath.vector.Vec2i;
 import jpize.sdl.input.Btn;
 import jpize.sdl.input.Key;
 import jpize.sdl.input.KeyAction;
+import jpize.util.math.Maths;
+import jpize.util.math.vecmath.vector.Vec2i;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

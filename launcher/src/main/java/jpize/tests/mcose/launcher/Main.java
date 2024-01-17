@@ -1,7 +1,7 @@
 package jpize.tests.mcose.launcher;
 
 import jpize.Jpize;
-import jpize.io.context.ContextBuilder;
+import jpize.app.context.ContextBuilder;
 
 import javax.swing.*;
 import java.awt.*;

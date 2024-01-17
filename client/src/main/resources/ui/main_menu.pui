@@ -9,7 +9,7 @@ $button_style = {
 @VBox {
 
     style.background.image: !background
-    style.background.color.a: 0.5
+    style.background.color.a: 0.4
 
     @Button (8ap, 70px, 'Singleplayer', !font) {
         ID: 'singleplayer'

@@ -1,6 +1,6 @@
 package openminer.client.core;
 
-import jpize.util.Disposable;
+import jpize.app.Disposable;
 import openminer.client.camera.Camera;
 
 public interface Renderer extends Disposable{

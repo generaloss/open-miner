@@ -1,6 +1,6 @@
 package openminer.core;
 
-import jpize.math.vecmath.vector.Vec3i;
+import jpize.util.math.vecmath.vector.Vec3i;
 
 public enum Dir{
 

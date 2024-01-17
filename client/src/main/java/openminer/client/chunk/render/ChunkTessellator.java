@@ -13,7 +13,7 @@ import openminer.core.pos.SectionPos;
 
 public class ChunkTessellator{
 
-    private static final int INITIAL_VERTEX_BUFFER_SIZE = 1179648; // Max value: 4bytes * 3floats * 4vertices * 6 faces * 16 * 16 * 16 blocks
+    private static final int INITIAL_CAPACITY = 1179648; // Max value: 4bytes * 3floats * 4vertices * 6 faces * 16 * 16 * 16 blocks
 
     private final ChunkRenderer renderer;
     private final FloatList vertexBuffer;
@@ -29,22 +29,19 @@ public class ChunkTessellator{
         Stopwatch sw0 = new Stopwatch().start();
         for(ChunkSection section: chunk.getSections().array())
             tesselate(section);
-        System.out.println("Итого: " + sw0.getMillis());
+        System.out.println("Chunk: " + sw0.getMillis());
     }
 
     public void tesselate(ChunkSection section){
         Stopwatch sw0 = new Stopwatch().start();
 
-        Stopwatch sw1 = new Stopwatch().start();
         if(section.getBlocks().isEmpty())
             return;
 
         final ByteSectionData blocks = section.getBlocks();
         final BlockMeshManager blockMeshes = renderer.getBlockMeshes();
         final SectionPos position = section.getPosition();
-        System.out.println("    Инициализация: " + sw1.getMillis());
 
-        sw1.reset();
         for(int y = 0; y < Chunks.SIZE; y++){
             for(int x = 0; x < Chunks.SIZE; x++){
                 for(int z = 0; z < Chunks.SIZE; z++){
@@ -73,30 +70,16 @@ public class ChunkTessellator{
                 }
             }
         }
-        System.out.println("    Итерация: " + sw1.getMillis());
-
-        sw1.reset();
-        Stopwatch sw2 = new Stopwatch().start();
 
         final SectionMesh mesh = new SectionMesh(position);
 
-        System.out.println("      Меш: " + sw2.getMillis());
-        sw2.reset();
-
+        vertexBuffer.trim();
         mesh.getBuffer().setData(vertexBuffer.array());
         renderer.getLevelMeshes().put(ChunkMeshType.BASE, position.pack(), mesh);
 
-        System.out.println("      Запись: " + sw2.getMillis());
-        sw2.reset();
-
         vertexBuffer.clear();
-        vertexBuffer.trim();
 
-        System.out.println("      Ресет: " + sw2.getMillis());
-
-        System.out.println("    Данные: " + sw1.getMillis());
-
-        System.out.println("  Секция_" + section.getPosition().y + ": " + sw0.getMillis());
+        System.out.println("  Section" + section.getPosition().y + ": " + sw0.getMillis() + " (" + vertexBuffer.capacity() + ")");
     }
 
 }

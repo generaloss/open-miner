@@ -1,9 +1,9 @@
 package openminer.client.gui.screens.mainmenu;
 
 import jpize.Jpize;
+import jpize.app.Disposable;
 import jpize.graphics.camera.PerspectiveCamera;
 import jpize.graphics.util.SkyBox;
-import jpize.util.Disposable;
 
 public class Panorama implements Disposable{
 

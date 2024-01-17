@@ -1,9 +1,9 @@
 package openminer.client.gui.screens;
 
+import jpize.app.Disposable;
+import jpize.app.Screen;
 import jpize.graphics.font.BitmapFont;
 import jpize.graphics.font.FontLoader;
-import jpize.io.context.Screen;
-import jpize.util.Disposable;
 
 public abstract class AbstractScreen implements Screen, Disposable{
 

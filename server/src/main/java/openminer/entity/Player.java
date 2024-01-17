@@ -1,3 +1,3 @@
 package openminer.entity;
 
-public class Player extends Entity{ }
+public class Player extends LivingEntity{ }

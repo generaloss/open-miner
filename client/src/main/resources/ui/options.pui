@@ -1,8 +1,8 @@
 $button_style = {
-    border_size: 1px
-    border_color: (0.7, 1.0)
+    border_size: 2px
+    border_color: (1, 1, 1, 1)
     background: {
-        color: (0.3, 0.5)
+        color: (0.5, 0.5, 0.5, 0.5)
     }
 }
 
@@ -47,6 +47,7 @@ $button_style = {
         padding: (20px, zero, auto, zero)
         style: $button_style
         textview.color: (1, 1, 1, 1)
+        hidden: true
     }
 
 }

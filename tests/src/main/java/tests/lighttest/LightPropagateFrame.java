@@ -1,12 +1,12 @@
 package tests.lighttest;
 
 import jpize.Jpize;
+import jpize.app.JpizeApplication;
 import jpize.gl.Gl;
 import jpize.graphics.util.batch.TextureBatch;
-import jpize.io.context.JpizeApplication;
-import jpize.math.Maths;
 import jpize.sdl.input.Key;
 import jpize.sdl.input.KeyAction;
+import jpize.util.math.Maths;
 
 public abstract class LightPropagateFrame extends JpizeApplication{
 

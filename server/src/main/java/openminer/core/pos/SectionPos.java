@@ -1,7 +1,7 @@
 package openminer.core.pos;
 
-import jpize.math.Maths;
-import jpize.math.vecmath.matrix.Matrix4f;
+import jpize.util.math.Maths;
+import jpize.util.math.vecmath.matrix.Matrix4f;
 import openminer.core.Chunks;
 
 public class SectionPos extends ImmutablePos3i{
