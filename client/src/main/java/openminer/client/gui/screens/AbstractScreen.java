@@ -2,13 +2,13 @@ package openminer.client.gui.screens;
 
 import jpize.app.Disposable;
 import jpize.app.Screen;
-import jpize.graphics.font.BitmapFont;
+import jpize.graphics.font.Font;
 import jpize.graphics.font.FontLoader;
 
 public abstract class AbstractScreen implements Screen, Disposable{
 
     protected final ScreenManager screenManager;
-    protected final BitmapFont font;
+    protected final Font font;
 
     public AbstractScreen(ScreenManager screenManager){
         this.screenManager = screenManager;

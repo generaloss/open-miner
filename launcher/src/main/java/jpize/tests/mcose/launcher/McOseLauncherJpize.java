@@ -8,7 +8,7 @@ import jpize.graphics.postprocess.effects.GaussianBlur;
 import jpize.graphics.texture.Texture;
 import jpize.graphics.util.batch.TextureBatch;
 import jpize.ui.constraint.Constr;
-import jpize.ui.palette.HBox;
+import jpize.ui.palette.layout.HBox;
 
 public class McOseLauncherJpize extends JpizeApplication{
 

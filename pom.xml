@@ -58,27 +58,27 @@
         <dependency>
             <groupId>jpize-engine</groupId>
             <artifactId>core</artifactId>
-            <version>23.12.1</version>
+            <version>24.1.1</version>
         </dependency>
         <dependency>
             <groupId>jpize-engine</groupId>
             <artifactId>net</artifactId>
-            <version>23.12.1</version>
+            <version>24.1.1</version>
         </dependency>
         <dependency>
             <groupId>jpize-engine</groupId>
             <artifactId>physic</artifactId>
-            <version>23.12.1</version>
+            <version>24.1.1</version>
         </dependency>
         <dependency>
             <groupId>jpize-engine</groupId>
             <artifactId>ui</artifactId>
-            <version>23.12.1</version>
+            <version>24.1.1</version>
         </dependency>
         <dependency>
             <groupId>jpize-engine</groupId>
             <artifactId>util</artifactId>
-            <version>23.12.1</version>
+            <version>24.1.1</version>
         </dependency>
         <!-- LWJGL -->
         <dependency><groupId>org.lwjgl</groupId><artifactId>lwjgl</artifactId></dependency>
